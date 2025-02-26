@@ -4,6 +4,10 @@
 
 The Advanced Danger Detection System is a comprehensive application designed to enhance safety by detecting dangerous objects in real-time using computer vision techniques. It leverages YOLO (You Only Look Once) for object detection and can be configured to use various camera sources, including USB cameras and IP cameras (such as those on mobile phones). The system provides a user-friendly interface built with PyQt5, offering features such as real-time alerts, historical data analysis, and customizable settings. It is designed to be modular, extensible, and adaptable to different environments, making it suitable for both home and commercial use.
 
+## Description du projet proposé
+
+Ce projet propose un système avancé de détection de dangers en temps réel utilisant des techniques de vision par ordinateur. Il utilise YOLO pour la détection d'objets et peut être configuré pour utiliser diverses sources de caméra, y compris les caméras USB et IP. Le système offre une interface conviviale avec des alertes en temps réel, une analyse des données historiques et des paramètres personnalisables, adapté pour une utilisation domestique et commerciale.
+
 ## Key Features
 
 - **Real-time Object Detection**: Utilizes YOLO for fast and accurate detection of dangerous objects.
