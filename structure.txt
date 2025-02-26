@@ -1,0 +1,35 @@
+/child_safety_system/
+├── src/
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── detection.py
+│   │   └── video_capture.py
+│   ├── gui/
+│   │   ├── __init__.py
+│   │   ├── main_window.py
+│   │   └── dialogs.py
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── log_manager.py
+│   │   └── backup_manager.py
+│   └── services/
+│       ├── __init__.py
+│       ├── notification_service.py
+│       └── analytics_service.py
+├── config/
+│   ├── settings.json
+│   ├── style.qss
+│   └── cloud_config.json
+├── data/
+│   ├── models/
+│   │   ├── yolov3.weights
+│   │   ├── yolov3.cfg
+│   │   └── coco.names
+│   └── database/
+│       └── danger_detection.db
+├── logs/
+│   ├── app.log
+│   └── error.log
+├── recordings/
+├── exports/
+└── backups/

@@ -1,0 +1,146 @@
+{
+    "detection": {
+        "confidence_threshold": 0.3,
+        "dangerous_objects": [
+            "knife",
+            "scissors",
+            "gun",
+            "lighter",
+            "matches",
+            "bottle",
+            "bat",
+            "axe"
+        ],
+        "alert_timeout": 30,
+        "max_detection_distance": 3.0,
+        "enable_motion_detection": true,
+        "motion_sensitivity": 0.3,
+        "nms_threshold": 0.3,
+        "frame_skip": 2
+    },
+    "face_recognition": {
+        "enabled": true,
+        "confidence_threshold": 0.6,
+        "unknown_face_alert": true,
+        "known_faces_update_interval": 3600,
+        "max_faces_per_frame": 10,
+        "min_face_size": 30
+    },
+    "camera": {
+        "primary": {
+            "id": 0,
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            },
+            "fps": 30,
+            "brightness": 1.0,
+            "contrast": 1.0,
+            "auto_exposure": true
+        },
+        "secondary": {
+            "enabled": false,
+            "id": 1,
+            "resolution": {
+                "width": 640,
+                "height": 480
+            }
+        }
+    },
+    "notifications": {
+        "telegram": {
+            "enabled": true,
+            "bot_token": "",
+            "chat_id": "",
+            "send_images": true,
+            "alert_cooldown": 300
+        },
+        "email": {
+            "enabled": false,
+            "smtp_server": "",
+            "smtp_port": 587,
+            "sender_email": "",
+            "sender_password": "",
+            "recipient_email": "",
+            "use_ssl": true
+        },
+        "desktop": {
+            "enabled": true,
+            "sound_alert": true,
+            "sound_file": "alert.wav",
+            "popup_duration": 5
+        }
+    },
+    "recording": {
+        "enabled": true,
+        "auto_record_on_detection": true,
+        "pre_record_buffer": 10,
+        "post_record_duration": 30,
+        "video_format": "mp4",
+        "video_codec": "h264",
+        "storage_path": "recordings/",
+        "max_storage_size_gb": 10,
+        "auto_cleanup": true,
+        "retention_days": 30
+    },
+    "database": {
+        "type": "sqlite",
+        "path": "danger_detection.db",
+        "backup": {
+            "enabled": true,
+            "interval_hours": 24,
+            "max_backups": 7,
+            "backup_path": "backups/"
+        },
+        "cleanup": {
+            "enabled": true,
+            "retention_days": 90,
+            "auto_vacuum": true
+        }
+    },
+    "ui": {
+        "language": "fr",
+        "theme": "dark",
+        "show_statistics": true,
+        "alert_sound": true,
+        "layout": {
+            "split_view": false,
+            "show_timeline": true,
+            "show_minimap": true
+        },
+        "alerts": {
+            "max_visible": 50,
+            "auto_scroll": true,
+            "group_similar": true,
+            "show_confidence": true
+        }
+    },
+    "system": {
+        "gpu_acceleration": true,
+        "max_cpu_usage": 80,
+        "startup_delay": 5,
+        "watchdog_enabled": true,
+        "log_level": "INFO",
+        "save_debug_frames": false
+    },
+    "advanced": {
+        "detection_interval": 100,
+        "frame_buffer_size": 30,
+        "threading": {
+            "detection_threads": 2,
+            "recognition_threads": 2,
+            "max_queue_size": 10
+        },
+        "optimization": {
+            "resize_frames": true,
+            "max_frame_size": 800,
+            "use_float16": true
+        }
+    },
+    "dangerous_objects": {
+        "camera": ["camera", "webcam", "cell phone"],
+        "weapons": ["knife", "scissors", "gun"],
+        "containers": ["bottle", "container"],
+        "electronics": ["laptop", "computer", "phone"]
+    }
+}

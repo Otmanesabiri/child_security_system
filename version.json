@@ -1,0 +1,19 @@
+{
+    "version": "1.0.0",
+    "update_date": "2024-01-01T00:00:00",
+    "min_python_version": "3.8.0",
+    "changelog": {
+        "1.0.0": {
+            "date": "2024-01-01",
+            "changes": [
+                "Version initiale avec détection d'objets dangereux",
+                "Reconnaissance faciale",
+                "Interface graphique moderne",
+                "Système de sauvegarde automatique",
+                "Gestion des logs avancée",
+                "Analyse statistique des détections",
+                "Notifications Telegram"
+            ]
+        }
+    }
+}

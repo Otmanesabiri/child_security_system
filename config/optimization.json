@@ -1,0 +1,19 @@
+{
+    "processing": {
+        "frame_resize": [416, 416],
+        "skip_frames": 2,
+        "max_objects": 10,
+        "confidence_threshold": 0.5,
+        "nms_threshold": 0.4
+    },
+    "memory": {
+        "max_queue_size": 30,
+        "clear_interval": 300,
+        "max_log_size": 10485760
+    },
+    "performance": {
+        "enable_gpu": false,
+        "batch_processing": false,
+        "async_detection": true
+    }
+}

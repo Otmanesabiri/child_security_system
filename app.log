@@ -1,0 +1,18 @@
+2025-02-26 10:59:25,129 - run - INFO - Loaded style sheet from c:\Users\Lenovo\Desktop\ENSET\child safty system\config\style.qss
+2025-02-26 10:59:52,198 - CameraManager - INFO - Connected to USB camera 0
+2025-02-26 11:00:36,707 - DangerDetectionApp - INFO - Loading YOLO model...
+2025-02-26 11:00:37,981 - DangerDetectionApp - INFO - YOLO model read successfully from c:\Users\Lenovo\Desktop\ENSET\child safty system\data\models\yolov3.weights and c:\Users\Lenovo\Desktop\ENSET\child safty system\data\models\yolov3.cfg
+2025-02-26 11:00:38,040 - DangerDetectionApp - INFO - YOLO model loaded successfully
+2025-02-26 11:00:47,253 - DangerDetectionApp - INFO - Detected: person (0.88), person (0.50)
+2025-02-26 11:00:53,337 - DangerDetectionApp - INFO - Detected: person (0.83), person (0.39)
+2025-02-26 11:00:54,839 - DangerDetectionApp - INFO - Detected: person (1.00), person (0.35), person (0.32)
+2025-02-26 11:00:57,903 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-02-26 11:01:08,657 - DangerDetectionApp - INFO - Detected: person (1.00), person (0.36), person (0.34)
+2025-02-26 11:01:16,792 - DangerDetectionApp - INFO - Detected: person (1.00), person (0.35)
+2025-02-26 11:01:20,520 - DangerDetectionApp - INFO - Detected: person (1.00), person (0.63), person (0.33)
+2025-02-26 11:01:22,590 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-02-26 11:01:24,769 - DangerDetectionApp - INFO - Detected: person (1.00), person (0.21)
+2025-02-26 11:01:25,929 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-02-26 11:01:27,212 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-02-26 11:01:28,577 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-02-26 11:01:30,261 - DangerDetectionApp - INFO - Detected: person (1.00)
