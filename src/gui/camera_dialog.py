@@ -1,100 +1,208 @@
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
+import cv2
+from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QPushButton,
+                           QLabel, QComboBox, QGroupBox, QFormLayout, 
+                           QSpinBox, QCheckBox, QMessageBox)
+from PyQt5.QtCore import Qt, QTimer
+from PyQt5.QtGui import QImage, QPixmap
+import logging
+
+from src.core.camera_utils import list_available_cameras, get_camera_details
 
 class CameraDialog(QDialog):
+    """
+    Dialog for camera configuration
+    """
     def __init__(self, camera_manager, parent=None):
         super().__init__(parent)
+        self.setWindowTitle("Camera Configuration")
+        self.setMinimumSize(640, 500)
+        
+        self.logger = logging.getLogger(__name__)
         self.camera_manager = camera_manager
-        self.setup_ui()
-
-    def setup_ui(self):
-        self.setWindowTitle("Configuration Caméra")
+        
+        # Initialize UI
+        self.init_ui()
+        
+        # Start preview timer
+        self.preview_timer = QTimer(self)
+        self.preview_timer.timeout.connect(self.update_preview)
+        self.preview_timer.start(50)  # 20 fps
+        
+    def init_ui(self):
+        """Initialize the user interface"""
         layout = QVBoxLayout()
-
-        # Section Caméra USB
-        usb_group = QGroupBox("Caméra USB")
-        usb_layout = QVBoxLayout()
         
+        # Camera selector
+        camera_group = QGroupBox("Select Camera")
+        camera_layout = QFormLayout()
+        
+        # Camera dropdown
         self.camera_combo = QComboBox()
-        self.refresh_camera_list()
+        self.populate_cameras()
         
-        self.connect_usb_btn = QPushButton("Connecter USB")
-        self.connect_usb_btn.clicked.connect(self.connect_usb_camera)
-
-        usb_layout.addWidget(QLabel("Sélectionner une caméra :"))
-        usb_layout.addWidget(self.camera_combo)
-        usb_layout.addWidget(self.connect_usb_btn)
-        usb_group.setLayout(usb_layout)
-
-        # Section Caméra IP
-        ip_group = QGroupBox("Caméra IP (Téléphone)")
-        ip_layout = QFormLayout()
+        # Refresh button
+        refresh_btn = QPushButton("Refresh")
+        refresh_btn.clicked.connect(self.populate_cameras)
         
-        self.ip_input = QLineEdit()
-        self.ip_input.setPlaceholderText("192.168.1.100")
-        self.port_input = QLineEdit()
-        self.port_input.setPlaceholderText("8080")
+        camera_selector_layout = QHBoxLayout()
+        camera_selector_layout.addWidget(self.camera_combo, 1)
+        camera_selector_layout.addWidget(refresh_btn, 0)
         
-        self.connect_ip_btn = QPushButton("Connecter IP")
-        self.connect_ip_btn.clicked.connect(self.connect_ip_camera)
-
-        ip_layout.addRow("Adresse IP:", self.ip_input)
-        ip_layout.addRow("Port:", self.port_input)
-        ip_layout.addRow(self.connect_ip_btn)
-        ip_group.setLayout(ip_layout)
-
-        # Ajouter les sections au layout principal
-        layout.addWidget(usb_group)
-        layout.addWidget(ip_group)
+        camera_layout.addRow("Camera:", camera_selector_layout)
         
-        # Bouton de fermeture
-        self.close_btn = QPushButton("Fermer")
-        self.close_btn.clicked.connect(self.accept)
-        layout.addWidget(self.close_btn)
-
+        # Apply button
+        apply_camera_btn = QPushButton("Apply")
+        apply_camera_btn.clicked.connect(self.apply_camera_selection)
+        camera_layout.addRow("", apply_camera_btn)
+        
+        camera_group.setLayout(camera_layout)
+        layout.addWidget(camera_group)
+        
+        # Camera settings
+        settings_group = QGroupBox("Camera Settings")
+        settings_layout = QFormLayout()
+        
+        # Resolution
+        resolution_layout = QHBoxLayout()
+        self.width_spin = QSpinBox()
+        self.width_spin.setRange(320, 3840)
+        self.width_spin.setValue(640)
+        self.height_spin = QSpinBox()
+        self.height_spin.setRange(240, 2160)
+        self.height_spin.setValue(480)
+        
+        resolution_layout.addWidget(self.width_spin)
+        resolution_layout.addWidget(QLabel("x"))
+        resolution_layout.addWidget(self.height_spin)
+        
+        settings_layout.addRow("Resolution:", resolution_layout)
+        
+        # Apply settings button
+        apply_settings_btn = QPushButton("Apply Settings")
+        apply_settings_btn.clicked.connect(self.apply_camera_settings)
+        settings_layout.addRow("", apply_settings_btn)
+        
+        settings_group.setLayout(settings_layout)
+        layout.addWidget(settings_group)
+        
+        # Camera preview
+        preview_group = QGroupBox("Camera Preview")
+        preview_layout = QVBoxLayout()
+        
+        self.preview_label = QLabel("No preview available")
+        self.preview_label.setAlignment(Qt.AlignCenter)
+        self.preview_label.setMinimumSize(320, 240)
+        self.preview_label.setStyleSheet("background-color: #222; color: white;")
+        
+        preview_layout.addWidget(self.preview_label)
+        preview_group.setLayout(preview_layout)
+        layout.addWidget(preview_group)
+        
+        # Dialog buttons
+        button_layout = QHBoxLayout()
+        close_btn = QPushButton("Close")
+        close_btn.clicked.connect(self.accept)
+        
+        screenshot_btn = QPushButton("Take Screenshot")
+        screenshot_btn.clicked.connect(self.take_screenshot)
+        
+        button_layout.addWidget(screenshot_btn)
+        button_layout.addWidget(close_btn)
+        layout.addLayout(button_layout)
+        
         self.setLayout(layout)
-
-    def refresh_camera_list(self):
+        
+    def populate_cameras(self):
+        """Populate the camera dropdown with available cameras"""
+        current_index = self.camera_combo.currentData()
         self.camera_combo.clear()
-        cameras = self.camera_manager.get_camera_list()
-        for cam_id in cameras:
-            self.camera_combo.addItem(f"Caméra {cam_id}", cam_id)
-
-    def connect_usb_camera(self):
-        if self.camera_combo.currentData() is not None:
-            device_id = self.camera_combo.currentData()
-            QApplication.setOverrideCursor(Qt.WaitCursor)
-            success = self.camera_manager.connect_usb_camera(device_id)
-            QApplication.restoreOverrideCursor()
+        
+        cameras = list_available_cameras()
+        if not cameras:
+            self.camera_combo.addItem("No cameras found", -1)
+            return
             
-            if success:
-                QMessageBox.information(self, "Succès", f"Caméra USB {device_id} connectée!")
+        for idx in cameras:
+            details = get_camera_details(idx)
+            if details:
+                label = f"Camera {idx} ({details['width']}x{details['height']})"
+                self.camera_combo.addItem(label, idx)
             else:
-                QMessageBox.warning(self, "Erreur", 
-                    "Impossible de connecter la caméra USB.\n"
-                    "Vérifiez que la caméra n'est pas utilisée par une autre application.")
-
-    def connect_ip_camera(self):
-        ip = self.ip_input.text().strip()
-        port = self.port_input.text().strip()
-        
-        if not ip:
-            QMessageBox.warning(self, "Erreur", "Veuillez entrer une adresse IP")
+                self.camera_combo.addItem(f"Camera {idx}", idx)
+                
+        # Restore previous selection if possible
+        if current_index is not None:
+            index = self.camera_combo.findData(current_index)
+            if index >= 0:
+                self.camera_combo.setCurrentIndex(index)
+                
+    def apply_camera_selection(self):
+        """Apply the selected camera"""
+        camera_idx = self.camera_combo.currentData()
+        if camera_idx == -1:
+            QMessageBox.warning(self, "No Camera", "No camera selected")
             return
             
-        try:
-            port = int(port) if port else 8080
-        except ValueError:
-            QMessageBox.warning(self, "Erreur", "Le port doit être un nombre")
-            return
-            
-        QApplication.setOverrideCursor(Qt.WaitCursor)
-        success = self.camera_manager.connect_ip_camera(ip, port)
-        QApplication.restoreOverrideCursor()
-        
+        success = self.camera_manager.open_camera(camera_idx)
         if success:
-            QMessageBox.information(self, "Succès", f"Caméra IP connectée à {ip}:{port}!")
+            # Update resolution spinners with actual values
+            resolution = self.camera_manager.get_camera_resolution()
+            if resolution:
+                self.width_spin.setValue(resolution[0])
+                self.height_spin.setValue(resolution[1])
+            QMessageBox.information(self, "Camera Changed", f"Successfully switched to camera {camera_idx}")
         else:
-            QMessageBox.warning(self, "Erreur", 
-                "Impossible de connecter la caméra IP.\n"
-                "Vérifiez l'adresse IP, le port et que l'application est en cours d'exécution.")
+            QMessageBox.warning(self, "Camera Error", f"Failed to open camera {camera_idx}")
+            
+    def apply_camera_settings(self):
+        """Apply camera settings"""
+        width = self.width_spin.value()
+        height = self.height_spin.value()
+        
+        success = self.camera_manager.set_camera_resolution(width, height)
+        if success:
+            QMessageBox.information(self, "Settings Applied", f"Resolution set to {width}x{height}")
+        else:
+            QMessageBox.warning(self, "Settings Failed", 
+                             "Failed to apply camera settings.\n"
+                             f"The camera may not support {width}x{height} resolution.")
+            
+            # Update spinners with actual values
+            resolution = self.camera_manager.get_camera_resolution()
+            if resolution:
+                self.width_spin.setValue(resolution[0])
+                self.height_spin.setValue(resolution[1])
+                
+    def update_preview(self):
+        """Update the camera preview"""
+        frame = self.camera_manager.get_frame()
+        if frame is None:
+            return
+            
+        # Convert frame to QImage for display
+        frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        h, w, ch = frame_rgb.shape
+        bytes_per_line = ch * w
+        
+        # Create QImage and scale to fit the preview label
+        image = QImage(frame_rgb.data, w, h, bytes_per_line, QImage.Format_RGB888)
+        pixmap = QPixmap.fromImage(image)
+        
+        # Scale while maintaining aspect ratio
+        label_size = self.preview_label.size()
+        scaled_pixmap = pixmap.scaled(label_size, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        
+        self.preview_label.setPixmap(scaled_pixmap)
+        
+    def take_screenshot(self):
+        """Take a screenshot from the camera"""
+        filepath = self.camera_manager.save_screenshot()
+        if filepath:
+            QMessageBox.information(self, "Screenshot Saved", f"Screenshot saved to {filepath}")
+        else:
+            QMessageBox.warning(self, "Screenshot Failed", "Failed to save screenshot")
+            
+    def closeEvent(self, event):
+        """Handle dialog close event"""
+        self.preview_timer.stop()
+        event.accept()

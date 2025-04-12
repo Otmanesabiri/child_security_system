@@ -44,8 +44,8 @@ def main():
     
     # Files to download with their URLs
     files = {
-        'coco.names': 'https://raw.githubusercontent.com/pjreddie/darknet/master/data/coco.names',
-        'yolov3.cfg': 'https://raw.githubusercontent.com/pjreddie/darknet/master/cfg/yolov3.cfg',
+       # 'coco.names': 'https://raw.githubusercontent.com/pjreddie/darknet/master/data/coco.names',
+       # 'yolov3.cfg': 'https://raw.githubusercontent.com/pjreddie/darknet/master/cfg/yolov3.cfg',
         'yolov3.weights': 'https://pjreddie.com/media/files/yolov3.weights'
     }
     

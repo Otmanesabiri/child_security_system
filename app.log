@@ -16,3 +16,18 @@
 2025-02-26 11:01:27,212 - DangerDetectionApp - INFO - Detected: person (1.00)
 2025-02-26 11:01:28,577 - DangerDetectionApp - INFO - Detected: person (1.00)
 2025-02-26 11:01:30,261 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 02:59:31,421 - run - INFO - Loaded style sheet from /home/red/Documents/GitHub/child_security_system/config/style.qss
+2025-04-12 03:00:07,456 - DangerDetectionApp - INFO - Loading YOLO model...
+2025-04-12 03:00:07,458 - DangerDetectionApp - ERROR - yolov3.weights not found at /home/red/Documents/GitHub/child_security_system/data/models/yolov3.weights
+2025-04-12 03:08:58,414 - run - INFO - Loaded style sheet from /home/red/Documents/GitHub/child_security_system/config/style.qss
+2025-04-12 03:09:02,307 - DangerDetectionApp - INFO - Loading YOLO model...
+2025-04-12 03:09:02,645 - DangerDetectionApp - INFO - YOLO model read successfully from /home/red/Documents/GitHub/child_security_system/data/models/yolov3.weights and /home/red/Documents/GitHub/child_security_system/data/models/yolov3.cfg
+2025-04-12 03:09:02,646 - DangerDetectionApp - INFO - YOLO model loaded successfully
+2025-04-12 03:14:45,437 - run - INFO - Loaded style sheet from /home/red/Documents/GitHub/child_security_system/config/style.qss
+2025-04-12 03:14:49,895 - DangerDetectionApp - INFO - Loading YOLO model...
+2025-04-12 03:14:50,732 - DangerDetectionApp - INFO - YOLO model read successfully from /home/red/Documents/GitHub/child_security_system/data/models/yolov3.weights and /home/red/Documents/GitHub/child_security_system/data/models/yolov3.cfg
+2025-04-12 03:14:50,733 - DangerDetectionApp - INFO - YOLO model loaded successfully
+2025-04-12 03:21:51,595 - run - INFO - Loaded style sheet from /home/red/Documents/GitHub/child_security_system/config/style.qss
+2025-04-12 03:21:55,962 - DangerDetectionApp - INFO - Loading YOLO model...
+2025-04-12 03:21:57,010 - DangerDetectionApp - INFO - YOLO model read successfully from /home/red/Documents/GitHub/child_security_system/data/models/yolov3.weights and /home/red/Documents/GitHub/child_security_system/data/models/yolov3.cfg
+2025-04-12 03:21:57,012 - DangerDetectionApp - INFO - YOLO model loaded successfully

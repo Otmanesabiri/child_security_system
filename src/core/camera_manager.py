@@ -1,149 +1,196 @@
 import cv2
-import urllib.request
-import numpy as np
-import threading
-from queue import Queue
 import logging
+import time
+import os
+from pathlib import Path
+
+logger = logging.getLogger(__name__)
 
 class CameraManager:
-    def __init__(self):
+    """
+    Class to manage camera devices
+    """
+    def __init__(self, camera_index=0):
+        """
+        Initialize the camera manager
+        
+        Args:
+            camera_index (int): Index of the camera to use
+        """
+        self.logger = logging.getLogger(__name__)
+        self.camera_index = camera_index
         self.camera = None
-        self.ip_stream_url = None
-        self.frame_queue = Queue(maxsize=2)
         self.is_running = False
-        self.logger = logging.getLogger('CameraManager')
-
-    def connect_usb_camera(self, device_id=0):
-        """Connecter une caméra USB"""
+        self.last_frame = None
+        self.open_camera()
+    
+    def open_camera(self, camera_index=None):
+        """
+        Open a camera device
+        
+        Args:
+            camera_index (int, optional): Index of the camera to open.
+                                         If None, uses the current index.
+        
+        Returns:
+            bool: True if camera opened successfully, False otherwise
+        """
+        if camera_index is not None:
+            self.camera_index = camera_index
+            
+        # Close any existing camera
+        if self.camera is not None:
+            self.camera.release()
+            
         try:
-            if self.camera is not None:
-                self.stop()  # Stop any existing camera
-
-            self.camera = cv2.VideoCapture(device_id, cv2.CAP_DSHOW)  # Use DirectShow
+            self.logger.info(f"Opening camera with index: {self.camera_index}")
+            self.camera = cv2.VideoCapture(self.camera_index)
+            
             if not self.camera.isOpened():
-                raise Exception(f"Impossible de connecter la caméra USB {device_id}")
+                self.logger.error(f"Failed to open camera {self.camera_index}")
+                return False
                 
-            # Test the camera
-            ret, _ = self.camera.read()
-            if not ret:
-                raise Exception("Camera test frame failed")
-
+            # Get camera information
+            width = int(self.camera.get(cv2.CAP_PROP_FRAME_WIDTH))
+            height = int(self.camera.get(cv2.CAP_PROP_FRAME_HEIGHT))
+            fps = self.camera.get(cv2.CAP_PROP_FPS)
+            
+            self.logger.info(f"Camera opened: {width}x{height} at {fps} FPS")
             self.is_running = True
-            threading.Thread(target=self._capture_loop, daemon=True).start()
-            self.logger.info(f"Connected to USB camera {device_id}")
             return True
             
         except Exception as e:
-            self.logger.error(f"Erreur de connexion USB: {str(e)}")
-            if self.camera is not None:
-                self.camera.release()
-                self.camera = None
+            self.logger.error(f"Error opening camera: {str(e)}")
             return False
-
-    def connect_ip_camera(self, ip_address, port=8080):
-        """Connecter une caméra IP (téléphone)"""
-        try:
-            if self.camera is not None:
-                self.stop()  # Stop any existing camera
-
-            print(f"Attempting to connect to IP camera at {ip_address}:{port}")
-            
-            # Modifier les URLs pour supporter plus de formats
-            urls = [
-                f"http://{ip_address}:{port}/video",
-                f"http://{ip_address}:{port}/videofeed",
-                f"http://{ip_address}:{port}/shot.jpg",
-                f"rtsp://{ip_address}:{port}/h264_ulaw.sdp",  # Format RTSP
-                f"http://{ip_address}:{port}/stream.mjpeg",   # Format MJPEG
-                f"http://{ip_address}:{port}/camera/live"
-            ]
-
-            for url in urls:
-                print(f"Trying URL: {url}")
-                try:
-                    self.logger.info(f"Trying to connect to {url}")
-                    # Ajouter des options pour améliorer la capture
-                    stream = cv2.VideoCapture(url, cv2.CAP_FFMPEG)
-                    stream.set(cv2.CAP_PROP_BUFFERSIZE, 3)
-                    
-                    if stream.isOpened():
-                        ret, frame = stream.read()
-                        if ret and frame is not None:
-                            print(f"Successfully connected to {url}")
-                            print(f"Frame size: {frame.shape}")
-                            self.camera = stream
-                            self.ip_stream_url = url
-                            self.is_running = True
-                            self.frame_queue = Queue(maxsize=3)  # Reset queue
-                            threading.Thread(target=self._capture_loop, daemon=True).start()
-                            self.logger.info(f"Successfully connected to IP camera at {url}")
-                            return True
-                except Exception as e:
-                    print(f"Failed to connect to {url}: {str(e)}")
-                    self.logger.warning(f"Failed to connect to {url}: {str(e)}")
-                    continue
-
-            raise Exception("No working connection found for IP camera")
-            
-        except Exception as e:
-            print(f"Camera connection error: {str(e)}")
-            self.logger.error(f"Erreur de connexion IP: {str(e)}")
-            return False
-
-    def _capture_loop(self):
-        """Boucle de capture des images améliorée"""
-        frame_count = 0
-        while self.is_running and self.camera is not None:
-            try:
-                ret, frame = self.camera.read()
-                if ret and frame is not None:
-                    frame_count += 1
-                    # Ne traiter qu'une image sur 2 pour réduire la charge
-                    if frame_count % 2 == 0:
-                        # Redimensionner l'image pour une meilleure performance
-                        frame = cv2.resize(frame, (640, 480))
-                        if not self.frame_queue.full():
-                            self.frame_queue.put(frame)
-                else:
-                    self.logger.warning("Failed to read frame")
-                    # Tentative de reconnexion
-                    if self.ip_stream_url:
-                        self.camera = cv2.VideoCapture(self.ip_stream_url, cv2.CAP_FFMPEG)
-                    break
-            except Exception as e:
-                self.logger.error(f"Error in capture loop: {str(e)}")
-                break
-
+    
     def get_frame(self):
-        """Récupérer la dernière image"""
-        try:
-            return self.frame_queue.get_nowait()
-        except:
-            return None
-
-    def get_camera_list(self):
-        """Liste toutes les caméras USB disponibles"""
-        available_cameras = []
-        tested_ports = 0
-        max_ports = 10  # Maximum number of ports to test
+        """
+        Get a frame from the camera
         
-        while tested_ports < max_ports:
-            try:
-                cap = cv2.VideoCapture(tested_ports, cv2.CAP_DSHOW)  # Use DirectShow
-                if cap.isOpened():
-                    ret, _ = cap.read()
-                    if ret:
-                        available_cameras.append(tested_ports)
-                    cap.release()
-            except:
-                pass
-            tested_ports += 1
+        Returns:
+            numpy.ndarray: Frame image or None if camera is not available
+        """
+        if self.camera is None or not self.camera.isOpened():
+            if not self.open_camera():
+                return None
+                
+        try:
+            ret, frame = self.camera.read()
+            if ret:
+                self.last_frame = frame
+                return frame
+            else:
+                self.logger.warning("Failed to read frame from camera")
+                return self.last_frame  # Return last good frame or None
+        except Exception as e:
+            self.logger.error(f"Error getting frame: {str(e)}")
+            return self.last_frame
+    
+    def set_camera_property(self, prop_id, value):
+        """
+        Set a camera property
+        
+        Args:
+            prop_id: OpenCV camera property ID
+            value: Value to set
             
-        return available_cameras
-
+        Returns:
+            bool: True if successful, False otherwise
+        """
+        if self.camera is None or not self.camera.isOpened():
+            return False
+            
+        return self.camera.set(prop_id, value)
+    
+    def get_camera_property(self, prop_id):
+        """
+        Get a camera property value
+        
+        Args:
+            prop_id: OpenCV camera property ID
+            
+        Returns:
+            Value of the property or None if camera is not available
+        """
+        if self.camera is None or not self.camera.isOpened():
+            return None
+            
+        return self.camera.get(prop_id)
+    
+    def get_camera_resolution(self):
+        """
+        Get the current camera resolution
+        
+        Returns:
+            tuple: (width, height) or None if camera is not available
+        """
+        if self.camera is None or not self.camera.isOpened():
+            return None
+            
+        width = int(self.camera.get(cv2.CAP_PROP_FRAME_WIDTH))
+        height = int(self.camera.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        return (width, height)
+    
+    def set_camera_resolution(self, width, height):
+        """
+        Set the camera resolution
+        
+        Args:
+            width (int): Desired width
+            height (int): Desired height
+            
+        Returns:
+            bool: True if successful, False otherwise
+        """
+        if self.camera is None or not self.camera.isOpened():
+            return False
+            
+        self.camera.set(cv2.CAP_PROP_FRAME_WIDTH, width)
+        self.camera.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
+        
+        # Verify if resolution was actually set
+        actual_width = int(self.camera.get(cv2.CAP_PROP_FRAME_WIDTH))
+        actual_height = int(self.camera.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        
+        return (actual_width == width and actual_height == height)
+    
+    def save_screenshot(self, output_dir="screenshots"):
+        """
+        Save a screenshot from the camera
+        
+        Args:
+            output_dir (str): Directory to save the screenshot
+            
+        Returns:
+            str: Path to the saved file or None if failed
+        """
+        frame = self.get_frame()
+        if frame is None:
+            return None
+            
+        # Create output directory if it doesn't exist
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Generate filename with timestamp
+        timestamp = time.strftime("%Y%m%d_%H%M%S")
+        filename = f"screenshot_{timestamp}.jpg"
+        filepath = os.path.join(output_dir, filename)
+        
+        # Save the image
+        try:
+            cv2.imwrite(filepath, frame)
+            self.logger.info(f"Screenshot saved: {filepath}")
+            return filepath
+        except Exception as e:
+            self.logger.error(f"Error saving screenshot: {str(e)}")
+            return None
+    
     def stop(self):
-        """Arrêter la capture"""
+        """
+        Stop and release the camera
+        """
         self.is_running = False
         if self.camera is not None:
             self.camera.release()
             self.camera = None
+            self.logger.info("Camera released")

@@ -1,0 +1,657 @@
+2025-04-12 03:35:06,455 - src.core.camera_utils - INFO - Found camera at index 0
+2025-04-12 03:35:06,466 - run - INFO - Found 1 camera(s): [0]
+2025-04-12 03:35:06,616 - run - INFO - Loaded style sheet from /home/red/Documents/GitHub/child_security_system/config/style.qss
+2025-04-12 03:35:06,617 - run - CRITICAL - Failed to start application: DangerDetectionApp.__init__() got an unexpected keyword argument 'config_path'
+Traceback (most recent call last):
+  File "/home/red/Documents/GitHub/child_security_system/run.py", line 215, in main
+    window = DangerDetectionApp(
+        config_path=str(config_path),
+        model_dir=str(model_dir),
+        has_cameras=has_cameras
+    )
+TypeError: DangerDetectionApp.__init__() got an unexpected keyword argument 'config_path'
+2025-04-12 03:40:35,420 - src.core.camera_utils - INFO - Found camera at index 0
+2025-04-12 03:40:35,428 - run - INFO - Found 1 camera(s): [0]
+2025-04-12 03:40:35,537 - run - INFO - Loaded style sheet from /home/red/Documents/GitHub/child_security_system/config/style.qss
+2025-04-12 03:40:35,544 - DangerDetectionApp - INFO - Initializing app with config: /home/red/Documents/GitHub/child_security_system/config/config.json, models: /home/red/Documents/GitHub/child_security_system/models
+2025-04-12 03:40:35,545 - DangerDetectionApp - INFO - Loaded config from /home/red/Documents/GitHub/child_security_system/config/config.json
+2025-04-12 03:40:35,545 - DangerDetectionApp - INFO - Dangerous objects: {'knife', 'gun', 'bottle', 'scissors', 'cell phone'}
+2025-04-12 03:40:35,743 - src.core.camera_manager - INFO - Opening camera with index: 0
+2025-04-12 03:40:35,829 - src.core.camera_manager - INFO - Camera opened: 640x480 at 30.0 FPS
+2025-04-12 03:40:40,247 - DangerDetectionApp - INFO - Loading YOLO model...
+2025-04-12 03:40:41,028 - DangerDetectionApp - INFO - YOLO model read successfully from /home/red/Documents/GitHub/child_security_system/models/yolov3.weights and /home/red/Documents/GitHub/child_security_system/models/yolov3.cfg
+2025-04-12 03:40:41,028 - DangerDetectionApp - INFO - YOLO model loaded successfully
+2025-04-12 03:40:47,502 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:40:47,537 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:40:47,567 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:40:47,595 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:40:47,680 - DangerDetectionApp - INFO - Detected: person (0.77)
+2025-04-12 03:40:48,822 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:40:48,823 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:40:48,825 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:40:48,831 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:40:48,873 - DangerDetectionApp - INFO - Detected: person (0.81)
+2025-04-12 03:40:49,852 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:40:49,852 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:40:49,854 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:40:49,860 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:40:49,898 - DangerDetectionApp - INFO - Detected: person (0.97)
+2025-04-12 03:40:50,723 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:40:50,723 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:40:50,725 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:40:50,731 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:40:50,765 - DangerDetectionApp - INFO - Detected: person (0.96)
+2025-04-12 03:40:51,619 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:40:51,619 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:40:51,621 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:40:51,628 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:40:51,664 - DangerDetectionApp - INFO - Detected: person (0.95)
+2025-04-12 03:40:52,589 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:40:52,589 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:40:52,591 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:40:52,599 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:40:52,639 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:40:53,559 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:40:53,559 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:40:53,561 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:40:53,567 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:40:53,610 - DangerDetectionApp - INFO - Detected: person (0.99)
+2025-04-12 03:40:54,336 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:40:54,336 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:40:54,337 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:40:54,343 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:40:54,396 - DangerDetectionApp - INFO - Detected: person (0.99)
+2025-04-12 03:40:55,305 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:40:55,305 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:40:55,306 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:40:55,311 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:40:55,348 - DangerDetectionApp - INFO - Detected: person (0.99)
+2025-04-12 03:40:56,194 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:40:56,194 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:40:56,195 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:40:56,201 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:40:56,227 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:40:57,007 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:40:57,007 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:40:57,009 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:40:57,018 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:40:57,050 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:40:57,853 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:40:57,853 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:40:57,855 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:40:57,860 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:40:57,904 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:40:58,858 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:40:58,859 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:40:58,860 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:40:58,867 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:40:58,892 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:40:59,607 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:40:59,607 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:40:59,609 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:40:59,615 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:40:59,637 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:00,500 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:00,500 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:00,502 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:00,508 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:00,537 - DangerDetectionApp - INFO - Detected: person (0.99)
+2025-04-12 03:41:01,335 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:01,335 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:01,337 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:01,342 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:01,372 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:02,153 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:02,153 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:02,155 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:02,161 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:02,197 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:03,111 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:03,112 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:03,116 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:03,131 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:03,186 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:04,290 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:04,291 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:04,295 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:04,307 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:04,366 - DangerDetectionApp - INFO - Detected: person (0.99)
+2025-04-12 03:41:05,464 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:05,464 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:05,466 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:05,473 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:05,505 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:06,305 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:06,305 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:06,308 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:06,315 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:06,356 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:07,260 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:07,260 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:07,263 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:07,274 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:07,317 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:08,158 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:08,158 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:08,160 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:08,166 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:08,202 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:09,457 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:09,458 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:09,460 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:09,470 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:09,514 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:10,334 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:10,334 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:10,336 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:10,344 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:10,382 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:11,157 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:11,157 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:11,159 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:11,165 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:11,196 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:11,926 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:11,926 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:11,928 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:11,933 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:11,970 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:12,730 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:12,731 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:12,732 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:12,738 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:12,984 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-12 03:41:13,997 - urllib3.connectionpool - DEBUG - https://api.telegram.org:443 "POST /botYour_Bot_Token/sendMessage HTTP/1.1" 404 55
+2025-04-12 03:41:14,008 - DangerDetectionApp - INFO - Detected: person (0.99), scissors (0.92)
+2025-04-12 03:41:14,813 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:14,813 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:14,814 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:14,820 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:14,855 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-12 03:41:15,444 - urllib3.connectionpool - DEBUG - https://api.telegram.org:443 "POST /botYour_Bot_Token/sendMessage HTTP/1.1" 404 55
+2025-04-12 03:41:15,446 - DangerDetectionApp - INFO - Detected: person (0.99), scissors (0.63)
+2025-04-12 03:41:16,327 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:16,327 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:16,329 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:16,336 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:16,377 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-12 03:41:17,038 - urllib3.connectionpool - DEBUG - https://api.telegram.org:443 "POST /botYour_Bot_Token/sendMessage HTTP/1.1" 404 55
+2025-04-12 03:41:17,041 - DangerDetectionApp - INFO - Detected: person (0.99), scissors (0.65)
+2025-04-12 03:41:17,827 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:17,827 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:17,829 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:17,835 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:17,873 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-12 03:41:18,494 - urllib3.connectionpool - DEBUG - https://api.telegram.org:443 "POST /botYour_Bot_Token/sendMessage HTTP/1.1" 404 55
+2025-04-12 03:41:18,496 - DangerDetectionApp - INFO - Detected: person (1.00), scissors (0.62)
+2025-04-12 03:41:19,335 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:19,335 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:19,337 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:19,345 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:19,379 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-12 03:41:21,073 - urllib3.connectionpool - DEBUG - https://api.telegram.org:443 "POST /botYour_Bot_Token/sendMessage HTTP/1.1" 404 55
+2025-04-12 03:41:21,075 - DangerDetectionApp - INFO - Detected: person (0.99), scissors (0.73)
+2025-04-12 03:41:21,857 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:21,857 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:21,859 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:21,865 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:21,898 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-12 03:41:22,247 - urllib3.connectionpool - DEBUG - https://api.telegram.org:443 "POST /botYour_Bot_Token/sendMessage HTTP/1.1" 404 55
+2025-04-12 03:41:22,249 - DangerDetectionApp - INFO - Detected: person (0.99), scissors (0.88)
+2025-04-12 03:41:23,068 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:23,068 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:23,070 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:23,076 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:23,114 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-12 03:41:23,436 - urllib3.connectionpool - DEBUG - https://api.telegram.org:443 "POST /botYour_Bot_Token/sendMessage HTTP/1.1" 404 55
+2025-04-12 03:41:23,439 - DangerDetectionApp - INFO - Detected: person (1.00), scissors (0.77)
+2025-04-12 03:41:24,238 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:24,238 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:24,240 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:24,246 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:24,274 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-12 03:41:24,561 - urllib3.connectionpool - DEBUG - https://api.telegram.org:443 "POST /botYour_Bot_Token/sendMessage HTTP/1.1" 404 55
+2025-04-12 03:41:24,563 - DangerDetectionApp - INFO - Detected: person (1.00), scissors (0.83)
+2025-04-12 03:41:25,870 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:25,870 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:25,875 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:25,889 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:25,941 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-12 03:41:26,827 - urllib3.connectionpool - DEBUG - https://api.telegram.org:443 "POST /botYour_Bot_Token/sendMessage HTTP/1.1" 404 55
+2025-04-12 03:41:26,828 - DangerDetectionApp - INFO - Detected: person (1.00), scissors (0.88)
+2025-04-12 03:41:28,167 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:28,167 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:28,171 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:28,183 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:28,252 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:29,437 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:29,437 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:29,438 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:29,444 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:29,465 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:30,244 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:30,244 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:30,246 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:30,252 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:30,285 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:31,039 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:31,039 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:31,040 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:31,048 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:31,076 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:31,811 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:31,811 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:31,813 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:31,820 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:31,853 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:32,649 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:32,649 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:32,651 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:32,656 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:32,693 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:33,415 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:33,415 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:33,417 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:33,423 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:33,454 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:34,242 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:34,242 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:34,243 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:34,251 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:34,283 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:35,007 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:35,008 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:35,009 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:35,017 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:35,048 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:35,780 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:35,780 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:35,782 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:35,787 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:35,821 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:36,621 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:36,621 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:36,623 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:36,628 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:36,661 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:37,407 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:37,407 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:37,409 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:37,415 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:37,439 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:38,174 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:38,174 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:38,176 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:38,183 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:38,208 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:39,028 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:39,028 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:39,030 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:39,037 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:39,071 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:39,813 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:39,813 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:39,815 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:39,821 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:39,853 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:40,629 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:40,629 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:40,631 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:40,637 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:40,668 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:41,435 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:41,435 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:41,437 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:41,443 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:41,474 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:42,205 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:42,205 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:42,207 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:42,212 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:42,249 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:43,589 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:43,589 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:43,594 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:43,618 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:43,673 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:45,101 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:45,102 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:45,105 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:45,119 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:45,199 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:46,470 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:46,471 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:46,472 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:46,478 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:46,514 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:47,355 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:47,356 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:47,357 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:47,363 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:47,393 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:48,101 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:48,102 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:48,103 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:48,109 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:48,142 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:48,967 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:48,968 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:48,970 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:48,978 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:49,026 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:49,955 - DangerDetectionApp - DEBUG - Number of output layers: 3
+2025-04-12 03:41:49,955 - DangerDetectionApp - DEBUG - Processing output layer 0 with shape (507, 85)
+2025-04-12 03:41:49,957 - DangerDetectionApp - DEBUG - Processing output layer 1 with shape (2028, 85)
+2025-04-12 03:41:49,963 - DangerDetectionApp - DEBUG - Processing output layer 2 with shape (8112, 85)
+2025-04-12 03:41:49,998 - DangerDetectionApp - INFO - Detected: person (1.00)
+2025-04-12 03:41:50,018 - src.core.camera_manager - INFO - Camera released
+2025-04-12 03:48:40,437 - src.core.camera_utils - INFO - Found camera at index 0
+2025-04-12 03:48:40,462 - run - INFO - Found 1 camera(s): [0]
+2025-04-12 03:48:40,641 - run - INFO - Loaded style sheet from /home/red/Documents/GitHub/child_security_system/config/style.qss
+2025-04-12 03:48:40,649 - DangerDetectionApp - INFO - Initializing app with config: /home/red/Documents/GitHub/child_security_system/config/config.json, models: /home/red/Documents/GitHub/child_security_system/models
+2025-04-12 03:48:40,650 - DangerDetectionApp - INFO - Loaded config from /home/red/Documents/GitHub/child_security_system/config/config.json
+2025-04-12 03:48:40,650 - DangerDetectionApp - INFO - Dangerous objects: {'gun', 'cell phone', 'knife', 'scissors', 'bottle'}
+2025-04-12 03:48:40,835 - run - CRITICAL - Failed to start application: 'NoneType' object has no attribute 'itemAt'
+Traceback (most recent call last):
+  File "/home/red/Documents/GitHub/child_security_system/run.py", line 215, in main
+    window = DangerDetectionApp(
+        config_path=str(config_path),
+        model_dir=str(model_dir),
+        has_cameras=has_cameras
+    )
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 152, in __init__
+    self.initUI()
+    ~~~~~~~~~~~^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 235, in initUI
+    self.add_recording_controls()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 443, in add_recording_controls
+    control_layout = self.detection_tab.layout().itemAt(0).layout().itemAt(1).layout()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'itemAt'
+2025-04-12 03:55:34,155 - src.core.camera_utils - INFO - Found camera at index 0
+2025-04-12 03:55:34,182 - run - INFO - Found 1 camera(s): [0]
+2025-04-12 03:55:34,266 - run - INFO - Loaded style sheet from /home/red/Documents/GitHub/child_security_system/config/style.qss
+2025-04-12 03:55:34,271 - DangerDetectionApp - INFO - Initializing app with config: /home/red/Documents/GitHub/child_security_system/config/config.json, models: /home/red/Documents/GitHub/child_security_system/models
+2025-04-12 03:55:34,274 - DangerDetectionApp - INFO - Loaded config from /home/red/Documents/GitHub/child_security_system/config/config.json
+2025-04-12 03:55:34,275 - DangerDetectionApp - INFO - Dangerous objects: {'gun', 'cell phone', 'knife', 'scissors', 'bottle'}
+2025-04-12 03:55:34,382 - run - CRITICAL - Failed to start application: 'DangerDetectionApp' object has no attribute 'browse_video_file'
+Traceback (most recent call last):
+  File "/home/red/Documents/GitHub/child_security_system/run.py", line 215, in main
+    window = DangerDetectionApp(
+        config_path=str(config_path),
+        model_dir=str(model_dir),
+        has_cameras=has_cameras
+    )
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 152, in __init__
+    self.initUI()
+    ~~~~~~~~~~~^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 221, in initUI
+    self.setup_detection_tab()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 258, in setup_detection_tab
+    self.browse_btn.clicked.connect(self.browse_video_file)
+                                    ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DangerDetectionApp' object has no attribute 'browse_video_file'
+2025-04-12 03:57:54,234 - src.core.camera_utils - INFO - Found camera at index 0
+2025-04-12 03:57:54,245 - run - INFO - Found 1 camera(s): [0]
+2025-04-12 03:57:54,312 - run - INFO - Loaded style sheet from /home/red/Documents/GitHub/child_security_system/config/style.qss
+2025-04-12 03:57:54,319 - DangerDetectionApp - INFO - Initializing app with config: /home/red/Documents/GitHub/child_security_system/config/config.json, models: /home/red/Documents/GitHub/child_security_system/models
+2025-04-12 03:57:54,319 - DangerDetectionApp - INFO - Loaded config from /home/red/Documents/GitHub/child_security_system/config/config.json
+2025-04-12 03:57:54,320 - DangerDetectionApp - INFO - Dangerous objects: {'knife', 'scissors', 'bottle', 'gun', 'cell phone'}
+2025-04-12 03:57:54,447 - run - CRITICAL - Failed to start application: 'DangerDetectionApp' object has no attribute 'update_confidence_threshold'
+Traceback (most recent call last):
+  File "/home/red/Documents/GitHub/child_security_system/run.py", line 215, in main
+    window = DangerDetectionApp(
+        config_path=str(config_path),
+        model_dir=str(model_dir),
+        has_cameras=has_cameras
+    )
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 152, in __init__
+    self.initUI()
+    ~~~~~~~~~~~^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 221, in initUI
+    self.setup_detection_tab()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 324, in setup_detection_tab
+    self.confidence_slider.valueChanged.connect(self.update_confidence_threshold)
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DangerDetectionApp' object has no attribute 'update_confidence_threshold'. Did you mean: 'confidence_threshold'?
+2025-04-12 04:03:57,466 - src.core.camera_utils - INFO - Found camera at index 0
+2025-04-12 04:03:57,491 - run - INFO - Found 1 camera(s): [0]
+2025-04-12 04:03:57,610 - run - INFO - Loaded style sheet from /home/red/Documents/GitHub/child_security_system/config/style.qss
+2025-04-12 04:03:57,616 - DangerDetectionApp - INFO - Initializing app with config: /home/red/Documents/GitHub/child_security_system/config/config.json, models: /home/red/Documents/GitHub/child_security_system/models
+2025-04-12 04:03:57,617 - DangerDetectionApp - INFO - Loaded config from /home/red/Documents/GitHub/child_security_system/config/config.json
+2025-04-12 04:03:57,617 - DangerDetectionApp - INFO - Dangerous objects: {'scissors', 'gun', 'cell phone', 'knife', 'bottle'}
+2025-04-12 04:03:57,629 - run - CRITICAL - Failed to start application: 'DangerDetectionApp' object has no attribute 'update_confidence_threshold'
+Traceback (most recent call last):
+  File "/home/red/Documents/GitHub/child_security_system/run.py", line 215, in main
+    window = DangerDetectionApp(
+        config_path=str(config_path),
+        model_dir=str(model_dir),
+        has_cameras=has_cameras
+    )
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 57, in __init__
+    self.initUI()
+    ~~~~~~~~~~~^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 126, in initUI
+    self.setup_detection_tab()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 184, in setup_detection_tab
+    self.confidence_slider.valueChanged.connect(self.update_confidence_threshold)
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DangerDetectionApp' object has no attribute 'update_confidence_threshold'. Did you mean: 'confidence_threshold'?
+2025-04-12 04:07:49,004 - src.core.camera_utils - INFO - Found camera at index 0
+2025-04-12 04:07:49,013 - run - INFO - Found 1 camera(s): [0]
+2025-04-12 04:07:49,124 - run - INFO - Loaded style sheet from /home/red/Documents/GitHub/child_security_system/config/style.qss
+2025-04-12 04:07:49,130 - DangerDetectionApp - INFO - Initializing app with config: /home/red/Documents/GitHub/child_security_system/config/config.json, models: /home/red/Documents/GitHub/child_security_system/models
+2025-04-12 04:07:49,130 - DangerDetectionApp - INFO - Loaded config from /home/red/Documents/GitHub/child_security_system/config/config.json
+2025-04-12 04:07:49,130 - DangerDetectionApp - INFO - Dangerous objects: {'scissors', 'bottle', 'cell phone', 'knife', 'gun'}
+2025-04-12 04:07:49,244 - run - CRITICAL - Failed to start application: 'DangerDetectionApp' object has no attribute 'update_danger_objects'
+Traceback (most recent call last):
+  File "/home/red/Documents/GitHub/child_security_system/run.py", line 215, in main
+    window = DangerDetectionApp(
+        config_path=str(config_path),
+        model_dir=str(model_dir),
+        has_cameras=has_cameras
+    )
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 76, in __init__
+    self.initUI()
+    ~~~~~~~~~~~^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 145, in initUI
+    self.setup_detection_tab()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 214, in setup_detection_tab
+    self.update_button.clicked.connect(self.update_danger_objects)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DangerDetectionApp' object has no attribute 'update_danger_objects'
+2025-04-12 04:09:38,272 - src.core.camera_utils - INFO - Found camera at index 0
+2025-04-12 04:09:38,283 - run - INFO - Found 1 camera(s): [0]
+2025-04-12 04:09:38,321 - run - INFO - Loaded style sheet from /home/red/Documents/GitHub/child_security_system/config/style.qss
+2025-04-12 04:09:38,323 - DangerDetectionApp - INFO - Initializing app with config: /home/red/Documents/GitHub/child_security_system/config/config.json, models: /home/red/Documents/GitHub/child_security_system/models
+2025-04-12 04:09:38,323 - DangerDetectionApp - INFO - Loaded config from /home/red/Documents/GitHub/child_security_system/config/config.json
+2025-04-12 04:09:38,323 - DangerDetectionApp - INFO - Dangerous objects: {'knife', 'bottle', 'cell phone', 'gun', 'scissors'}
+2025-04-12 04:09:38,419 - run - CRITICAL - Failed to start application: 'DangerDetectionApp' object has no attribute 'toggle_recording'
+Traceback (most recent call last):
+  File "/home/red/Documents/GitHub/child_security_system/run.py", line 215, in main
+    window = DangerDetectionApp(
+        config_path=str(config_path),
+        model_dir=str(model_dir),
+        has_cameras=has_cameras
+    )
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 76, in __init__
+    self.initUI()
+    ~~~~~~~~~~~^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 145, in initUI
+    self.setup_detection_tab()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 228, in setup_detection_tab
+    self.add_recording_controls()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 245, in add_recording_controls
+    self.record_video_btn.clicked.connect(self.toggle_recording)
+                                          ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DangerDetectionApp' object has no attribute 'toggle_recording'. Did you mean: 'toggle_alert_recording'?
+2025-04-12 04:10:54,174 - src.core.camera_utils - INFO - Found camera at index 0
+2025-04-12 04:10:54,199 - run - INFO - Found 1 camera(s): [0]
+2025-04-12 04:10:54,283 - run - INFO - Loaded style sheet from /home/red/Documents/GitHub/child_security_system/config/style.qss
+2025-04-12 04:10:54,285 - DangerDetectionApp - INFO - Initializing app with config: /home/red/Documents/GitHub/child_security_system/config/config.json, models: /home/red/Documents/GitHub/child_security_system/models
+2025-04-12 04:10:54,285 - DangerDetectionApp - INFO - Loaded config from /home/red/Documents/GitHub/child_security_system/config/config.json
+2025-04-12 04:10:54,286 - DangerDetectionApp - INFO - Dangerous objects: {'scissors', 'bottle', 'cell phone', 'gun', 'knife'}
+2025-04-12 04:10:54,393 - run - CRITICAL - Failed to start application: 'DangerDetectionApp' object has no attribute 'setup_alerts_tab'
+Traceback (most recent call last):
+  File "/home/red/Documents/GitHub/child_security_system/run.py", line 215, in main
+    window = DangerDetectionApp(
+        config_path=str(config_path),
+        model_dir=str(model_dir),
+        has_cameras=has_cameras
+    )
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 130, in __init__
+    self.initUI()
+    ~~~~~~~~~~~^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 203, in initUI
+    self.setup_alerts_tab()
+    ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DangerDetectionApp' object has no attribute 'setup_alerts_tab'
+2025-04-12 04:11:00,134 - src.core.camera_utils - INFO - Found camera at index 0
+2025-04-12 04:11:00,146 - run - INFO - Found 1 camera(s): [0]
+2025-04-12 04:11:00,184 - run - INFO - Loaded style sheet from /home/red/Documents/GitHub/child_security_system/config/style.qss
+2025-04-12 04:11:00,185 - DangerDetectionApp - INFO - Initializing app with config: /home/red/Documents/GitHub/child_security_system/config/config.json, models: /home/red/Documents/GitHub/child_security_system/models
+2025-04-12 04:11:00,186 - DangerDetectionApp - INFO - Loaded config from /home/red/Documents/GitHub/child_security_system/config/config.json
+2025-04-12 04:11:00,186 - DangerDetectionApp - INFO - Dangerous objects: {'bottle', 'knife', 'gun', 'cell phone', 'scissors'}
+2025-04-12 04:11:00,253 - run - CRITICAL - Failed to start application: 'DangerDetectionApp' object has no attribute 'setup_alerts_tab'
+Traceback (most recent call last):
+  File "/home/red/Documents/GitHub/child_security_system/run.py", line 215, in main
+    window = DangerDetectionApp(
+        config_path=str(config_path),
+        model_dir=str(model_dir),
+        has_cameras=has_cameras
+    )
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 130, in __init__
+    self.initUI()
+    ~~~~~~~~~~~^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 203, in initUI
+    self.setup_alerts_tab()
+    ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DangerDetectionApp' object has no attribute 'setup_alerts_tab'
+2025-04-12 04:16:15,390 - src.core.camera_utils - INFO - Found camera at index 0
+2025-04-12 04:16:15,404 - run - INFO - Found 1 camera(s): [0]
+2025-04-12 04:16:15,530 - run - INFO - Loaded style sheet from /home/red/Documents/GitHub/child_security_system/config/style.qss
+2025-04-12 04:16:15,535 - DangerDetectionApp - INFO - Initializing app with config: /home/red/Documents/GitHub/child_security_system/config/config.json, models: /home/red/Documents/GitHub/child_security_system/models
+2025-04-12 04:16:15,536 - DangerDetectionApp - INFO - Loaded config from /home/red/Documents/GitHub/child_security_system/config/config.json
+2025-04-12 04:16:15,536 - DangerDetectionApp - INFO - Dangerous objects: {'knife', 'gun', 'cell phone', 'bottle', 'scissors'}
+2025-04-12 04:16:15,664 - DangerDetectionApp - ERROR - Error loading alerts from DB: 'builtin_function_or_method' object has no attribute 'execute'
+2025-04-12 04:16:15,751 - DangerDetectionApp - INFO - Database initialized at /home/red/Documents/GitHub/child_security_system/data/danger_detection.db
+2025-04-12 04:16:15,751 - src.core.camera_manager - INFO - Opening camera with index: 0
+2025-04-12 04:16:15,838 - src.core.camera_manager - INFO - Camera opened: 640x480 at 30.0 FPS
+2025-04-12 04:16:37,524 - DangerDetectionApp - INFO - Updated confidence threshold to 0.60
+2025-04-12 04:16:38,723 - DangerDetectionApp - INFO - Updated confidence threshold to 0.59
+2025-04-12 04:16:38,724 - DangerDetectionApp - INFO - Updated confidence threshold to 0.57
+2025-04-12 04:16:38,724 - DangerDetectionApp - INFO - Updated confidence threshold to 0.56
+2025-04-12 04:16:38,725 - DangerDetectionApp - INFO - Updated confidence threshold to 0.54
+2025-04-12 04:16:38,725 - DangerDetectionApp - INFO - Updated confidence threshold to 0.53
+2025-04-12 04:16:38,726 - DangerDetectionApp - INFO - Updated confidence threshold to 0.52
+2025-04-12 04:16:38,785 - DangerDetectionApp - INFO - Updated confidence threshold to 0.51
+2025-04-12 04:16:38,788 - DangerDetectionApp - INFO - Updated confidence threshold to 0.50
+2025-04-12 04:16:38,790 - DangerDetectionApp - INFO - Updated confidence threshold to 0.48
+2025-04-12 04:16:38,790 - DangerDetectionApp - INFO - Updated confidence threshold to 0.47
+2025-04-12 04:16:38,791 - DangerDetectionApp - INFO - Updated confidence threshold to 0.46
+2025-04-12 04:16:38,843 - DangerDetectionApp - INFO - Updated confidence threshold to 0.44
+2025-04-12 04:16:38,902 - DangerDetectionApp - INFO - Updated confidence threshold to 0.43
+2025-04-12 04:16:53,926 - DangerDetectionApp - INFO - Updated dangerous objects list: {'knife', 'gun', 'cell phone', 'bottle', 'scissors'}
+2025-04-12 04:17:02,248 - DangerDetectionApp - INFO - Loading YOLO model...
+2025-04-12 04:17:03,506 - DangerDetectionApp - INFO - YOLO model read successfully from /home/red/Documents/GitHub/child_security_system/models/yolov3.weights and /home/red/Documents/GitHub/child_security_system/models/yolov3.cfg
+2025-04-12 04:17:03,510 - DangerDetectionApp - INFO - YOLO model loaded successfully
+2025-04-12 04:17:03,511 - DangerDetectionApp - INFO - Object detection activated.
+2025-04-12 04:17:14,235 - DangerDetectionApp - INFO - Object detection deactivated.
+2025-04-12 04:18:24,236 - DangerDetectionApp - INFO - Object detection activated.
+2025-04-12 04:18:50,211 - DangerDetectionApp - INFO - Saved alert to DB: cell phone at 2025-04-12 04:18:50
+2025-04-12 04:18:50,243 - DangerDetectionApp - ERROR - Error processing frame: 'DangerDetectionApp' object has no attribute 'settings'
+Traceback (most recent call last):
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 846, in process_frame
+    self.send_telegram_alert(label, confidence, alert_frame)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 607, in send_telegram_alert
+    token = self.settings.get('telegram_bot_token')
+            ^^^^^^^^^^^^^
+AttributeError: 'DangerDetectionApp' object has no attribute 'settings'
+2025-04-12 04:19:21,286 - DangerDetectionApp - INFO - Saved alert to DB: scissors at 2025-04-12 04:19:21
+2025-04-12 04:19:21,287 - DangerDetectionApp - ERROR - Error processing frame: 'DangerDetectionApp' object has no attribute 'settings'
+Traceback (most recent call last):
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 846, in process_frame
+    self.send_telegram_alert(label, confidence, alert_frame)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 607, in send_telegram_alert
+    token = self.settings.get('telegram_bot_token')
+            ^^^^^^^^^^^^^
+AttributeError: 'DangerDetectionApp' object has no attribute 'settings'
+2025-04-12 04:20:32,188 - DangerDetectionApp - INFO - Saved alert to DB: cell phone at 2025-04-12 04:20:32
+2025-04-12 04:20:32,230 - DangerDetectionApp - ERROR - Error processing frame: 'DangerDetectionApp' object has no attribute 'settings'
+Traceback (most recent call last):
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 846, in process_frame
+    self.send_telegram_alert(label, confidence, alert_frame)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 607, in send_telegram_alert
+    token = self.settings.get('telegram_bot_token')
+            ^^^^^^^^^^^^^
+AttributeError: 'DangerDetectionApp' object has no attribute 'settings'
+2025-04-12 04:20:43,187 - DangerDetectionApp - INFO - Saved alert to DB: bottle at 2025-04-12 04:20:43
+2025-04-12 04:20:43,189 - DangerDetectionApp - ERROR - Error processing frame: 'DangerDetectionApp' object has no attribute 'settings'
+Traceback (most recent call last):
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 846, in process_frame
+    self.send_telegram_alert(label, confidence, alert_frame)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/red/Documents/GitHub/child_security_system/src/gui/main_window.py", line 607, in send_telegram_alert
+    token = self.settings.get('telegram_bot_token')
+            ^^^^^^^^^^^^^
+AttributeError: 'DangerDetectionApp' object has no attribute 'settings'
+2025-04-12 04:21:07,137 - DangerDetectionApp - INFO - Object detection deactivated.
+2025-04-12 04:21:40,625 - DangerDetectionApp - INFO - Updated confidence threshold to 0.42
+2025-04-12 04:21:40,647 - DangerDetectionApp - INFO - Updated confidence threshold to 0.44
+2025-04-12 04:21:40,648 - DangerDetectionApp - INFO - Updated confidence threshold to 0.45
+2025-04-12 04:21:40,649 - DangerDetectionApp - INFO - Updated confidence threshold to 0.46
+2025-04-12 04:21:40,649 - DangerDetectionApp - INFO - Updated confidence threshold to 0.47
+2025-04-12 04:21:40,680 - DangerDetectionApp - INFO - Updated confidence threshold to 0.49
+2025-04-12 04:21:40,681 - DangerDetectionApp - INFO - Updated confidence threshold to 0.50
+2025-04-12 04:21:40,691 - DangerDetectionApp - INFO - Updated confidence threshold to 0.51
+2025-04-12 04:21:40,693 - DangerDetectionApp - INFO - Updated confidence threshold to 0.53
+2025-04-12 04:21:40,694 - DangerDetectionApp - INFO - Updated confidence threshold to 0.55
+2025-04-12 04:21:40,740 - DangerDetectionApp - INFO - Updated confidence threshold to 0.58
+2025-04-12 04:21:40,800 - DangerDetectionApp - INFO - Updated confidence threshold to 0.60
+2025-04-12 04:21:40,803 - DangerDetectionApp - INFO - Updated confidence threshold to 0.64
+2025-04-12 04:21:40,804 - DangerDetectionApp - INFO - Updated confidence threshold to 0.69
+2025-04-12 04:21:40,808 - DangerDetectionApp - INFO - Updated confidence threshold to 0.72
+2025-04-12 04:21:40,810 - DangerDetectionApp - INFO - Updated confidence threshold to 0.75
+2025-04-12 04:21:40,859 - DangerDetectionApp - INFO - Updated confidence threshold to 0.77
+2025-04-12 04:21:40,859 - DangerDetectionApp - INFO - Updated confidence threshold to 0.78
+2025-04-12 04:21:40,859 - DangerDetectionApp - INFO - Updated confidence threshold to 0.81
+2025-04-12 04:21:40,860 - DangerDetectionApp - INFO - Updated confidence threshold to 0.82
+2025-04-12 04:21:41,279 - DangerDetectionApp - INFO - Updated confidence threshold to 0.81
+2025-04-12 04:21:41,280 - DangerDetectionApp - INFO - Updated confidence threshold to 0.80
+2025-04-12 04:21:41,280 - DangerDetectionApp - INFO - Updated confidence threshold to 0.76
+2025-04-12 04:21:41,280 - DangerDetectionApp - INFO - Updated confidence threshold to 0.71
+2025-04-12 04:21:41,340 - DangerDetectionApp - INFO - Updated confidence threshold to 0.56
+2025-04-12 04:21:41,341 - DangerDetectionApp - INFO - Updated confidence threshold to 0.53
+2025-04-12 04:21:41,341 - DangerDetectionApp - INFO - Updated confidence threshold to 0.51
+2025-04-12 04:21:41,342 - DangerDetectionApp - INFO - Updated confidence threshold to 0.49
+2025-04-12 04:21:41,580 - DangerDetectionApp - INFO - Updated confidence threshold to 0.47
+2025-04-12 04:21:41,640 - DangerDetectionApp - INFO - Updated confidence threshold to 0.46
+2025-04-12 04:21:41,641 - DangerDetectionApp - INFO - Updated confidence threshold to 0.45
+2025-04-12 04:21:42,180 - DangerDetectionApp - INFO - Updated confidence threshold to 0.42
+2025-04-12 04:21:42,240 - DangerDetectionApp - INFO - Updated confidence threshold to 0.41
+2025-04-12 04:21:42,479 - DangerDetectionApp - INFO - Updated confidence threshold to 0.40
+2025-04-12 04:21:42,600 - DangerDetectionApp - INFO - Updated confidence threshold to 0.38
+2025-04-12 04:21:42,660 - DangerDetectionApp - INFO - Updated confidence threshold to 0.37
+2025-04-12 04:21:44,220 - DangerDetectionApp - INFO - Updated confidence threshold to 0.38
+2025-04-12 04:21:44,340 - DangerDetectionApp - INFO - Updated confidence threshold to 0.40
+2025-04-12 04:21:44,341 - DangerDetectionApp - INFO - Updated confidence threshold to 0.41
+2025-04-12 04:21:44,401 - DangerDetectionApp - INFO - Updated confidence threshold to 0.42
+2025-04-12 04:21:44,459 - DangerDetectionApp - INFO - Updated confidence threshold to 0.44
+2025-04-12 04:21:44,579 - DangerDetectionApp - INFO - Updated confidence threshold to 0.45
+2025-04-12 04:21:44,700 - DangerDetectionApp - INFO - Updated confidence threshold to 0.46
+2025-04-12 04:21:48,821 - DangerDetectionApp - INFO - Closing application...
+2025-04-12 04:21:48,822 - DangerDetectionApp - INFO - Stopped frame update timer.
+2025-04-12 04:21:48,826 - src.core.camera_manager - INFO - Camera released
+2025-04-12 04:21:48,826 - DangerDetectionApp - INFO - Stopped camera manager.
+2025-04-12 04:21:48,830 - DangerDetectionApp - INFO - Closed database connection.
+2025-04-12 04:21:48,840 - DangerDetectionApp - INFO - Application closed.
